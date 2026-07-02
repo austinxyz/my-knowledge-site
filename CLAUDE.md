@@ -53,7 +53,7 @@ Guidance for working on this project. Site = bilingual (中文 / EN) landing sit
 | 文件 | 说明 |
 |------|------|
 | `index.html` | 首页 / 落地页。已实现。bilingual toggle（zh/en），vanilla JS `render()` 驱动 `ZH`/`EN` 数据对象。 |
-| `resources.html` | 资源 / 文章页。待建。放理财教育文章列表（RSU、401K、税务等主题）。须复用同一配色、字体、tone、导航、语言切换。 |
+| `resources.html` | 资源 / 文章页。已建。理财教育文章列表（RSU / 退休 / 税务 / 家庭 / 选顾问），3 列卡片网格 + 深绿 CTA band。复用同一配色、字体、tone、nav、语言切换。 |
 
 ## index.html 必须包含的板块
 

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>资源 · 硅谷华人理财顾问</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0}
+  body{
+    background:#faf7f2;
+    font-family:'Instrument Sans','Noto Sans SC',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    color:#17201c;
+  }
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto}
+
+  /* nav — shared with index.html */
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:24px 60px}
+  .brand{font-size:19px;font-weight:600;letter-spacing:-.01em}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .nav-links{display:flex;align-items:center;gap:22px}
+  .nav-link{text-decoration:none;font-size:14px;font-weight:600;color:#1a4d3a}
+  .nav-link.active{position:relative}
+  .nav-link.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:#1a4d3a}
+  .toggle{cursor:pointer;font-size:13px;font-weight:500;color:#5b6b63;padding:7px 14px;background:#fff;border:none;border-radius:999px;box-shadow:0 1px 4px rgba(23,32,28,.08);font-family:inherit}
+  .btn-primary{text-decoration:none;font-size:14px;font-weight:600;color:#fff;background:#1a4d3a;padding:11px 22px;border-radius:999px}
+
+  /* page header */
+  .res-head{padding:40px 60px 44px}
+  .kicker{display:inline-block;font-size:13px;font-weight:600;color:#1a4d3a;background:#e9f1ec;padding:7px 15px;border-radius:999px;margin-bottom:20px}
+  .res-head h1{font-size:44px;line-height:1.15;font-weight:600;letter-spacing:-.025em;margin:0 0 16px}
+  .res-head p{font-size:17px;line-height:1.7;color:#5b6b63;margin:0;max-width:40em}
+
+  /* article grid */
+  .articles{padding:0 60px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{display:flex;flex-direction:column;background:#fff;border-radius:20px;padding:30px 28px;box-shadow:0 2px 14px rgba(23,32,28,.06);text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease}
+  .card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(23,32,28,.1)}
+  .card-tag{align-self:flex-start;font-size:12px;font-weight:600;color:#1a4d3a;background:#e9f1ec;padding:5px 12px;border-radius:999px;margin-bottom:18px}
+  .card h3{font-size:19px;font-weight:600;letter-spacing:-.01em;margin:0 0 10px;line-height:1.35}
+  .card p{font-size:14.5px;line-height:1.65;color:#5b6b63;margin:0 0 20px}
+  .card-meta{margin-top:auto;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#8a9790}
+  .card-arrow{color:#1a4d3a;font-weight:700}
+
+  /* dark CTA band — matches booking on index */
+  .cta-band{padding:8px 60px 64px}
+  .cta-inner{background:#12362a;border-radius:28px;color:#fff;padding:48px 56px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .cta-inner h2{font-size:28px;font-weight:600;letter-spacing:-.02em;margin:0 0 8px;color:#fff}
+  .cta-inner p{font-size:15.5px;line-height:1.6;color:#cfe0d8;margin:0;max-width:34em}
+  .cta-band-btn{text-decoration:none;font-size:15px;font-weight:600;color:#12362a;background:#fff;padding:14px 28px;border-radius:999px;white-space:nowrap}
+
+  .footer{padding:24px 60px 48px;font-size:12.5px;color:#a89f92;text-align:center}
+
+  @media (max-width:860px){
+    .nav,.res-head,.articles,.cta-band,.footer{padding-left:24px;padding-right:24px}
+    .res-head h1{font-size:32px}
+    .articles{grid-template-columns:1fr}
+    .cta-inner{flex-direction:column;align-items:flex-start;padding:36px 28px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+const CALENDLY = "https://calendly.com/your-handle";
+
+const ZH = {
+  brand: '[您的名字] 理财顾问',
+  navHome: '首页',
+  navResources: '资源',
+  cta1: '预约免费咨询',
+  headKicker: '理财教育 · 免费阅读',
+  headTitle: '把复杂的钱，讲成人话。',
+  headSub: '写给湾区华人工程师的理财科普。RSU、退休账户、税务规划——用清楚的语言，一篇讲透一件事。不卖产品，只讲道理。',
+  articles: [
+    { tag: 'RSU / 股权', title: 'RSU vest 后，第一件该想清楚的事', excerpt: '集中持仓风险、卖出时点、vesting 与卖出的两次征税——一套简单规则，代替凭感觉操作。', read: '8 分钟' },
+    { tag: '退休账户', title: 'Traditional vs. Roth 401(k)：到底怎么选', excerpt: '按边际税率和退休预期做决策，而不是听同事一句话。附 Mega Backdoor Roth 判断清单。', read: '10 分钟' },
+    { tag: '税务规划', title: 'ISO 行权与 AMT：别在 4 月才发现问题', excerpt: '行权时点如何影响 AMT、什么时候分批行权、如何预留现金——全年规划的思路。', read: '12 分钟' },
+    { tag: '税务规划', title: 'RSU 补税：预扣不够的那部分怎么办', excerpt: '为什么 22% 预扣常常不够、如何估算补税缺口、季度预缴避免罚金。', read: '7 分钟' },
+    { tag: '家庭财务', title: '529 教育金：值不值得、放多少', excerpt: '加州视角下的税优、灵活性权衡，以及和退休储蓄的优先级排序。', read: '9 分钟' },
+    { tag: '选顾问', title: 'Fee-only 到底意味着什么', excerpt: '佣金制 vs. 收费制的利益差别，以及 fiduciary 受托责任为什么重要。', read: '6 分钟' },
+  ],
+  ctaTitle: '看完还有问题？',
+  ctaSub: '初次咨询免费，没有任何推销。带上你的具体情况，我们聊 30 分钟。',
+  ctaBtn: '预约免费咨询',
+  footer: '© 2026 [您的名字] 理财顾问 · 仅供教育用途，不构成个性化投资建议。',
+};
+
+const EN = {
+  brand: '[Your Name] Financial Planning',
+  navHome: 'Home',
+  navResources: 'Resources',
+  cta1: 'Book a free call',
+  headKicker: 'Financial education · Free to read',
+  headTitle: 'Complicated money, in plain words.',
+  headSub: 'Personal-finance explainers for Bay Area engineers. RSUs, retirement accounts, taxes — one topic at a time, explained clearly. No products sold, just how it actually works.',
+  articles: [
+    { tag: 'RSU / Equity', title: 'Your RSUs vested — the first thing to sort out', excerpt: 'Concentration risk, when to sell, and the two taxable events (vest and sale). Simple rules instead of gut feel.', read: '8 min' },
+    { tag: 'Retirement', title: 'Traditional vs. Roth 401(k): how to actually choose', excerpt: 'Decide from your marginal rate and retirement outlook, not a coworker’s hot take. Includes a Mega Backdoor Roth checklist.', read: '10 min' },
+    { tag: 'Taxes', title: 'ISO exercise & AMT: don’t find out in April', excerpt: 'How exercise timing drives AMT, when to exercise in batches, and how to reserve cash — a year-round approach.', read: '12 min' },
+    { tag: 'Taxes', title: 'RSU withholding: covering the gap 22% leaves', excerpt: 'Why 22% withholding often falls short, how to estimate the shortfall, and quarterly estimates that avoid penalties.', read: '7 min' },
+    { tag: 'Family', title: '529 college savings: worth it, and how much', excerpt: 'The California-lens tax break, the flexibility trade-off, and where it ranks against retirement saving.', read: '9 min' },
+    { tag: 'Choosing an advisor', title: 'What "fee-only" actually means', excerpt: 'The incentive gap between commission and fee models, and why fiduciary duty matters for you.', read: '6 min' },
+  ],
+  ctaTitle: 'Still have questions?',
+  ctaSub: 'The intro call is free, with zero sales pressure. Bring your situation and we’ll talk for 30 minutes.',
+  ctaBtn: 'Book a free call',
+  footer: '© 2026 [Your Name] Financial Planning · For education only; not personalized investment advice.',
+};
+
+let lang = 'zh';
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function render(){
+  const t = lang === 'zh' ? ZH : EN;
+  const toggleLabel = lang === 'zh' ? 'EN' : '中文';
+  document.documentElement.lang = lang;
+
+  const cardsHtml = t.articles.map(a => `
+    <a href="#" class="card">
+      <span class="card-tag">${esc(a.tag)}</span>
+      <h3>${esc(a.title)}</h3>
+      <p>${esc(a.excerpt)}</p>
+      <span class="card-meta">${esc(a.read)} <span class="card-arrow">→</span></span>
+    </a>`).join('');
+
+  document.getElementById('app').innerHTML = `
+    <div class="nav">
+      <div class="brand">🌿 ${esc(t.brand)}</div>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">${esc(t.navHome)}</a>
+          <a href="resources.html" class="nav-link active">${esc(t.navResources)}</a>
+        </div>
+        <button class="toggle" id="langToggle">${esc(toggleLabel)}</button>
+        <a href="${CALENDLY}" class="btn-primary">${esc(t.cta1)}</a>
+      </div>
+    </div>
+
+    <div class="res-head">
+      <div class="kicker">${esc(t.headKicker)}</div>
+      <h1>${esc(t.headTitle)}</h1>
+      <p>${esc(t.headSub)}</p>
+    </div>
+
+    <div class="articles">${cardsHtml}</div>
+
+    <div class="cta-band">
+      <div class="cta-inner">
+        <div>
+          <h2>${esc(t.ctaTitle)}</h2>
+          <p>${esc(t.ctaSub)}</p>
+        </div>
+        <a href="${CALENDLY}" class="cta-band-btn">${esc(t.ctaBtn)}</a>
+      </div>
+    </div>
+
+    <div class="footer">${esc(t.footer)}</div>
+  `;
+
+  document.getElementById('langToggle').addEventListener('click', () => {
+    lang = lang === 'zh' ? 'en' : 'zh';
+    render();
+  });
+}
+
+render();
+</script>
+</body>
+</html>

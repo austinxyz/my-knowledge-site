@@ -113,6 +113,7 @@ const CALENDLY = "https://calendly.com/your-handle";
 const ZH = {
   brand: '[您的名字] 理财顾问',
   navHome: '首页',
+  navResources: '资源',
   heroKicker: '湾区华人工程师 · 财务规划',
   heroTitle: '钱的事，慢慢聊清楚',
   heroSub: '专注服务 30–45 岁湾区科技从业者。中立、透明、不销售任何产品——只帮你把复杂的钱，理出清晰的方向。',
@@ -156,6 +157,7 @@ const ZH = {
 const EN = {
   brand: '[Your Name] Financial Planning',
   navHome: 'Home',
+  navResources: 'Resources',
   heroKicker: 'For Bay Area engineers · Financial planning',
   heroTitle: 'Your money, made clear.',
   heroSub: 'Financial planning built for tech professionals aged 30–45 in the Bay Area. Independent, transparent, and product-free — I turn a complicated financial life into a clear plan.',
@@ -237,6 +239,7 @@ function render(){
       <div class="nav-right">
         <div class="nav-links">
           <a href="index.html" class="nav-link active">${esc(t.navHome)}</a>
+          <a href="resources.html" class="nav-link">${esc(t.navResources)}</a>
         </div>
         <button class="toggle" id="langToggle">${esc(toggleLabel)}</button>
         <a href="${CALENDLY}" class="btn-primary">${esc(t.cta1)}</a>
