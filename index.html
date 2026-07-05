@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Austin Xu · 硅谷华人工程师财务规划</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#ffffff;color:#14181d;font-family:"Noto Sans SC",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent,#0f3b66);color:#fff}
+
+  /* responsive */
+  @media (max-width:900px){
+    .nav-inner{padding:14px 20px !important}
+    .nav-links{gap:16px !important}
+    .nav-links .nav-link{display:none !important}
+    .hero{grid-template-columns:1fr !important;padding:48px 20px 52px !important;gap:36px !important}
+    .hero h1{font-size:34px !important}
+    .section-pad{padding:56px 20px !important}
+    .pains-grid{grid-template-columns:1fr !important}
+    .about{grid-template-columns:1fr !important;gap:32px !important}
+    .about-photo{max-width:320px}
+    .pricing-grid{grid-template-columns:1fr !important}
+    .book-grid{grid-template-columns:1fr !important}
+    .footer-inner{padding:36px 20px 32px !important}
+  }
+</style>
+</head>
+<body>
+
+<div style="--accent:#0f3b66;width:100%;max-width:100%;overflow-x:hidden">
+
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(15,24,29,.08)">
+    <div class="nav-inner" style="max-width:1160px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="display:flex;align-items:center;gap:11px">
+        <span style="width:30px;height:30px;border-radius:7px;background:var(--accent,#0f3b66);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500">财</span>
+        <span style="font-family:'Noto Serif SC',serif;font-weight:600;font-size:17px;letter-spacing:.5px">Austin Xu· 财务规划</span>
+      </a>
+      <nav class="nav-links" style="display:flex;align-items:center;gap:30px">
+        <a class="nav-link" href="#pains" style="font-size:14px;color:#4a5560;font-weight:400">核心痛点</a>
+        <a class="nav-link" href="#about" style="font-size:14px;color:#4a5560;font-weight:400">关于我</a>
+        <a class="nav-link" href="#pricing" style="font-size:14px;color:#4a5560;font-weight:400">服务套餐</a>
+        <a href="#book" style="display:inline-flex;align-items:center;gap:7px;background:var(--accent,#0f3b66);color:#fff;font-size:14px;font-weight:500;padding:9px 18px;border-radius:8px">预约诊断</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="hero" style="max-width:1160px;margin:0 auto;padding:78px 40px 72px;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:9px;padding:6px 13px;border:1px solid rgba(15,59,102,.22);border-radius:100px;margin-bottom:26px">
+        <span style="width:7px;height:7px;border-radius:50%;background:#1f7a4d"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:1px;color:var(--accent,#0f3b66);text-transform:uppercase">FEE-ONLY · 独立顾问 · 湾区</span>
+      </div>
+      <h1 style="font-family:'Noto Serif SC',serif;font-weight:700;font-size:47px;line-height:1.28;letter-spacing:.5px;margin:0 0 22px;text-wrap:balance">
+        把你的 <span style="color:var(--accent,#0f3b66)">401K、RSU、ISO、529</span><br>配置成一套完整的财务系统
+      </h1>
+      <p style="font-size:17px;line-height:1.85;color:#4a5560;margin:0 0 34px;max-width:520px">
+        专注湾区华人工程师的税务与退休规划。帮你算清每一次 vest、每一次行权背后的税单，把散落的账户变成一份可执行的年度节税方案。
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:38px">
+        <a href="#book" style="display:inline-flex;align-items:center;gap:9px;background:var(--accent,#0f3b66);color:#fff;font-size:15.5px;font-weight:500;padding:15px 28px;border-radius:10px;box-shadow:0 8px 24px -8px rgba(15,59,102,.5)">
+          预约 30 分钟免费诊断 →
+        </a>
+        <a href="#pricing" style="display:inline-flex;align-items:center;gap:9px;color:#14181d;font-size:15.5px;font-weight:500;padding:15px 24px;border-radius:10px;border:1px solid rgba(15,24,29,.16)">
+          查看服务套餐
+        </a>
+      </div>
+      <div style="display:flex;gap:34px;flex-wrap:wrap">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:500;color:var(--accent,#0f3b66)">120+</div>
+          <div style="font-size:13px;color:#6b7580;margin-top:3px">服务过的工程师家庭</div>
+        </div>
+        <div style="width:1px;background:rgba(15,24,29,.1)"></div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:500;color:var(--accent,#0f3b66)">CFP®</div>
+          <div style="font-size:13px;color:#6b7580;margin-top:3px">持证理财规划师</div>
+        </div>
+        <div style="width:1px;background:rgba(15,24,29,.1)"></div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:500;color:var(--accent,#0f3b66)">$0</div>
+          <div style="font-size:13px;color:#6b7580;margin-top:3px">不卖产品·不收佣金</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- data snapshot card -->
+    <div style="background:#f6f8fa;border:1px solid rgba(15,24,29,.08);border-radius:16px;padding:28px 28px 30px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.5px;color:#6b7580;text-transform:uppercase">配置快照 · 示例</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#1f7a4d">已优化</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:7px"><span style="color:#3a4550">RSU 集中持仓</span><span style="font-family:'IBM Plex Mono',monospace;color:#14181d">62% → 28%</span></div>
+          <div style="height:8px;border-radius:6px;background:#e4e9ee;overflow:hidden"><div style="width:28%;height:100%;background:var(--accent,#0f3b66)"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:7px"><span style="color:#3a4550">401K 年度上限利用</span><span style="font-family:'IBM Plex Mono',monospace;color:#14181d">74% → 100%</span></div>
+          <div style="height:8px;border-radius:6px;background:#e4e9ee;overflow:hidden"><div style="width:100%;height:100%;background:var(--accent,#0f3b66)"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:7px"><span style="color:#3a4550">ISO 行权 AMT 缓冲</span><span style="font-family:'IBM Plex Mono',monospace;color:#14181d">已规划</span></div>
+          <div style="height:8px;border-radius:6px;background:#e4e9ee;overflow:hidden"><div style="width:88%;height:100%;background:#1f7a4d"></div></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:7px"><span style="color:#3a4550">529 教育金起步</span><span style="font-family:'IBM Plex Mono',monospace;color:#14181d">新开户</span></div>
+          <div style="height:8px;border-radius:6px;background:#e4e9ee;overflow:hidden"><div style="width:40%;height:100%;background:var(--accent,#0f3b66)"></div></div>
+        </div>
+      </div>
+      <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(15,24,29,.09);display:flex;align-items:baseline;justify-content:space-between">
+        <span style="font-size:13.5px;color:#3a4550">预估年度可省税</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;color:var(--accent,#0f3b66)">≈ $20,000</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section id="pains" style="background:var(--accent,#0f3b66);color:#fff">
+    <div class="section-pad" style="max-width:1160px;margin:0 auto;padding:80px 40px 84px">
+      <div style="max-width:640px;margin-bottom:52px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#89b4d6;text-transform:uppercase;margin-bottom:16px">你可能正卡在这里</div>
+        <h2 style="font-family:'Noto Serif SC',serif;font-weight:700;font-size:34px;line-height:1.4;margin:0">三个几乎每位工程师都会踩的坑</h2>
+      </div>
+      <div class="pains-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:30px 26px 32px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#89b4d6;margin-bottom:18px">01</div>
+          <h3 style="font-family:'Noto Serif SC',serif;font-weight:600;font-size:20px;margin:0 0 14px">RSU vest 了，该卖还是留？</h3>
+          <p style="font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.72);margin:0">单一雇主股票占了净资产一大半，集中持仓风险叠加税表冲击，却没人帮你算清「卖多少、什么时候卖、税后剩多少」。</p>
+        </div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:30px 26px 32px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#89b4d6;margin-bottom:18px">02</div>
+          <h3 style="font-family:'Noto Serif SC',serif;font-weight:600;font-size:20px;margin:0 0 14px">ISO 行权，一脚踩进 AMT</h3>
+          <p style="font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.72);margin:0">不懂 AMT 的触发线，行权时机没规划好，一年多交几万刀税。什么时候行权、行权多少股，本该是可以精算的。</p>
+        </div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:30px 26px 32px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#89b4d6;margin-bottom:18px">03</div>
+          <h3 style="font-family:'Noto Serif SC',serif;font-weight:600;font-size:20px;margin:0 0 14px">账户各自为战，节税机会白白浪费</h3>
+          <p style="font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.72);margin:0">401K、Backdoor Roth、HSA、529 各开各的，缺一套统一的年度规划。每年报税季才发现，能省的税又漏掉了。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about" style="max-width:1160px;margin:0 auto;padding:88px 40px 80px;display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center">
+    <div>
+      <div class="about-photo" style="width:100%;aspect-ratio:4/5;border-radius:16px;background:repeating-linear-gradient(135deg,#eef1f4 0 12px,#f6f8fa 12px 24px);border:1px solid rgba(15,24,29,.1);display:flex;align-items:center;justify-content:center">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#9aa4ae;letter-spacing:.5px">[ 顾问本人照片 ]</span>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:var(--accent,#0f3b66);text-transform:uppercase;margin-bottom:16px">关于我</div>
+      <h2 style="font-family:'Noto Serif SC',serif;font-weight:700;font-size:32px;line-height:1.45;margin:0 0 22px">我曾是工程师，<br>现在帮工程师管钱</h2>
+      <p style="font-size:16px;line-height:1.9;color:#3a4550;margin:0 0 20px">
+我是 Austin Xu，前【某科技公司】软件工程师，转行做独立理财规划已 X 年，服务过 120+ 个湾区华人工程师家庭。我懂 RSU offer 的结构，也懂报税季看到税单时的那种焦虑。
+      </p>
+      <p style="font-size:16px;line-height:1.9;color:#3a4550;margin:0 0 30px">
+        我只做 fee-only 独立顾问——不卖保险、不卖基金、不收任何佣金。我的收入只来自你付的规划费，所以我给的每一条建议，都只对你的利益负责。
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <span style="padding:8px 15px;background:#eef3f8;border:1px solid rgba(15,59,102,.14);border-radius:8px;font-size:13.5px;font-family:'IBM Plex Mono',monospace;color:var(--accent,#0f3b66)">CFP® 持证</span>
+        <span style="padding:8px 15px;background:#eef3f8;border:1px solid rgba(15,59,102,.14);border-radius:8px;font-size:13.5px;font-family:'IBM Plex Mono',monospace;color:var(--accent,#0f3b66)">前科技公司工程师</span>
+        <span style="padding:8px 15px;background:#eef3f8;border:1px solid rgba(15,59,102,.14);border-radius:8px;font-size:13.5px;font-family:'IBM Plex Mono',monospace;color:var(--accent,#0f3b66)">Fee-Only 独立顾问</span>
+        <span style="padding:8px 15px;background:#eef3f8;border:1px solid rgba(15,59,102,.14);border-radius:8px;font-size:13.5px;font-family:'IBM Plex Mono',monospace;color:var(--accent,#0f3b66)">中文母语沟通</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" style="background:#f6f8fa;border-top:1px solid rgba(15,24,29,.07);border-bottom:1px solid rgba(15,24,29,.07)">
+    <div class="section-pad" style="max-width:1160px;margin:0 auto;padding:84px 40px 88px">
+      <div style="text-align:center;max-width:600px;margin:0 auto 52px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:var(--accent,#0f3b66);text-transform:uppercase;margin-bottom:16px">服务套餐</div>
+        <h2 style="font-family:'Noto Serif SC',serif;font-weight:700;font-size:34px;line-height:1.4;margin:0 0 14px">透明定价，按需选择</h2>
+        <p style="font-size:15.5px;line-height:1.8;color:#5b6672;margin:0">价格为示例，实际以初次沟通后报价为准。无隐藏费用、无产品佣金。</p>
+      </div>
+      <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:840px;margin:0 auto">
+        <!-- tier 1 -->
+        <div style="background:#fff;border:1px solid rgba(15,24,29,.1);border-radius:16px;padding:36px 34px 38px;display:flex;flex-direction:column">
+          <h3 style="font-family:'Noto Serif SC',serif;font-weight:600;font-size:22px;margin:0 0 8px">一次性财务规划</h3>
+          <p style="font-size:14px;color:#6b7580;margin:0 0 24px;line-height:1.7">适合想先把当前配置理清、拿到一份可执行方案的你。</p>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:28px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:38px;font-weight:500;color:#14181d">$500</span>
+            <span style="font-size:14px;color:#6b7580">起 · 一次性</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:13px;margin-bottom:32px">
+            <div style="display:flex;gap:11px;font-size:14.5px;line-height:1.6;color:#3a4550"><span style="color:#1f7a4d;flex:none">✓</span>现有 401K / RSU / ISO / 529 全面梳理</div>
+            <div style="display:flex;gap:11px;font-size:14.5px;line-height:1.6;color:#3a4550"><span style="color:#1f7a4d;flex:none">✓</span>RSU 减持 & ISO 行权时机建议</div>
+            <div style="display:flex;gap:11px;font-size:14.5px;line-height:1.6;color:#3a4550"><span style="color:#1f7a4d;flex:none">✓</span>年度节税规划书（含 Backdoor Roth）</div>
+            <div style="display:flex;gap:11px;font-size:14.5px;line-height:1.6;color:#3a4550"><span style="color:#1f7a4d;flex:none">✓</span>2 次 1v1 视频沟通</div>
+          </div>
+          <a href="#book" style="margin-top:auto;display:inline-flex;justify-content:center;align-items:center;padding:13px;border-radius:10px;border:1px solid var(--accent,#0f3b66);color:var(--accent,#0f3b66);font-size:15px;font-weight:500">选择这一档</a>
+        </div>
+        <!-- tier 2 -->
+        <div style="position:relative;background:var(--accent,#0f3b66);color:#fff;border-radius:16px;padding:36px 34px 38px;display:flex;flex-direction:column;box-shadow:0 20px 50px -20px rgba(15,59,102,.6)">
+          <span style="position:absolute;top:20px;right:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.5px;background:#1f7a4d;color:#fff;padding:5px 11px;border-radius:100px">最受欢迎</span>
+          <h3 style="font-family:'Noto Serif SC',serif;font-weight:600;font-size:22px;margin:0 0 8px">年度全程顾问</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,.72);margin:0 0 24px;line-height:1.7">适合每年都有 vest / 行权、需要持续陪跑的你。</p>
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:28px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:38px;font-weight:500">$3,600</span>
+            <span style="font-size:14px;color:rgba(255,255,255,.72)">/ 年</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:13px;margin-bottom:32px">
+            <div style="display:flex;gap:11px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.9)"><span style="color:#7fe0a8;flex:none">✓</span>包含「一次性规划」全部内容</div>
+            <div style="display:flex;gap:11px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.9)"><span style="color:#7fe0a8;flex:none">✓</span>每季度配置复盘 + 再平衡</div>
+            <div style="display:flex;gap:11px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.9)"><span style="color:#7fe0a8;flex:none">✓</span>报税季前税务预演与协调会计师</div>
+            <div style="display:flex;gap:11px;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.9)"><span style="color:#7fe0a8;flex:none">✓</span>全年微信随时答疑</div>
+          </div>
+          <a href="#book" style="margin-top:auto;display:inline-flex;justify-content:center;align-items:center;padding:13px;border-radius:10px;background:#fff;color:var(--accent,#0f3b66);font-size:15px;font-weight:500">选择这一档</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book" class="section-pad" style="max-width:1160px;margin:0 auto;padding:88px 40px 92px">
+    <div style="text-align:center;max-width:600px;margin:0 auto 48px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:var(--accent,#0f3b66);text-transform:uppercase;margin-bottom:16px">开始</div>
+      <h2 style="font-family:'Noto Serif SC',serif;font-weight:700;font-size:34px;line-height:1.4;margin:0 0 14px">先聊 30 分钟，看看能不能帮到你</h2>
+      <p style="font-size:15.5px;line-height:1.8;color:#5b6672;margin:0">免费、无推销。聊完你会清楚自己最该先解决哪一块。</p>
+    </div>
+    <div class="book-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:840px;margin:0 auto">
+      <!-- calendly -->
+      <div style="border:1px solid rgba(15,24,29,.1);border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;align-items:center;text-align:center">
+        <div style="width:52px;height:52px;border-radius:13px;background:var(--accent,#0f3b66);display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+          <span style="color:#fff;font-size:24px">📅</span>
+        </div>
+        <h3 style="font-family:'Noto Serif SC',serif;font-weight:600;font-size:20px;margin:0 0 10px">在线预约</h3>
+        <p style="font-size:14.5px;line-height:1.75;color:#5b6672;margin:0 0 26px">直接挑一个方便的时间，自动发日历邀请。</p>
+        <a href="#" style="margin-top:auto;width:100%;display:inline-flex;justify-content:center;align-items:center;padding:14px;border-radius:10px;background:var(--accent,#0f3b66);color:#fff;font-size:15px;font-weight:500">用 Calendly 预约 →</a>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa4ae;margin-top:12px">[ 替换为你的 Calendly 链接 ]</span>
+      </div>
+      <!-- wechat -->
+      <div style="border:1px solid rgba(15,24,29,.1);border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;align-items:center;text-align:center">
+        <div style="width:52px;height:52px;border-radius:13px;background:#1f7a4d;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+          <span style="color:#fff;font-size:24px">💬</span>
+        </div>
+        <h3 style="font-family:'Noto Serif SC',serif;font-weight:600;font-size:20px;margin:0 0 10px">加微信详聊</h3>
+        <p style="font-size:14.5px;line-height:1.75;color:#5b6672;margin:0 0 22px">扫码加我，备注「财务规划」，我会亲自回复。</p>
+        <div style="width:150px;height:150px;border-radius:12px;background:repeating-linear-gradient(45deg,#eef1f4 0 10px,#f6f8fa 10px 20px);border:1px solid rgba(15,24,29,.1);display:flex;align-items:center;justify-content:center;margin-top:auto">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9aa4ae;text-align:center;line-height:1.5">[ 微信<br>二维码 ]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0d1b28;color:rgba(255,255,255,.6)">
+    <div class="footer-inner" style="max-width:1160px;margin:0 auto;padding:44px 40px 40px">
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1)">
+        <div style="display:flex;align-items:center;gap:11px">
+          <span style="width:28px;height:28px;border-radius:7px;background:var(--accent,#0f3b66);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'IBM Plex Mono',monospace;font-size:12px">财</span>
+          <span style="font-family:'Noto Serif SC',serif;font-weight:600;font-size:15px;color:#fff">Austin Xu· 财务规划</span>
+        </div>
+        <div style="display:flex;gap:24px;font-size:13.5px">
+          <a href="#pains" style="color:rgba(255,255,255,.6)">核心痛点</a>
+          <a href="#about" style="color:rgba(255,255,255,.6)">关于我</a>
+          <a href="#pricing" style="color:rgba(255,255,255,.6)">服务套餐</a>
+          <a href="#book" style="color:rgba(255,255,255,.6)">预约</a>
+        </div>
+      </div>
+      <p style="font-size:12px;line-height:1.8;margin:22px 0 0;color:rgba(255,255,255,.4)">
+        免责声明：本页面所有内容（含配置快照、可省税金额、价格）均为示意，仅供参考，不构成任何投资、税务或法律建议。具体规划需结合个人情况，以正式沟通及书面方案为准。© 2026 Austin Xu。保留所有权利。
+      </p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
