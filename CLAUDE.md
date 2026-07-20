@@ -48,7 +48,8 @@ Austin —— 北美华人个人理财顾问，服务湾区华人工程师。
 
 | 页面 | 说明 |
 |---|---|
-| `index.html` | 首页（当前唯一页面）|
+| `index.html` | 首页 |
+| `resources.html` | 资源与指南（文章列表，按主题筛选）|
 
 ### index.html 必须包含的板块
 
@@ -66,6 +67,19 @@ Austin —— 北美华人个人理财顾问，服务湾区华人工程师。
 
 所有 CTA 指向页内 `#book` 锚点。
 
+### resources.html 必须包含的板块
+
+1. **顶部导航** —— 品牌标识（回首页）+ 首页 / 资源 链接 + 预约咨询 CTA；
+   当前页链接需标记 `aria-current="page"`
+2. **导语** —— eyebrow + 主标题 + 一句话说明写作意图
+3. **主题筛选** —— 全部 / 401K / RSU / 税务规划 / 投资基础，选中态为实心主色
+4. **文章网格** —— 两列卡片，每张含主题标签、标题、两行摘要、日期与阅读时长；
+   上方显示当前篇数
+5. **页脚** —— 与首页完全一致
+
+文章卡片全部静态输出在 HTML 中，筛选只做显示/隐藏，禁用 JS 时内容仍可读。
+新增文章 = 在网格里加一张卡片并带上 `data-topic`，无需改 JS。
+
 ## Visual specs
 
 配色、字体、间距、圆角、阴影等一切视觉规范见 `design-system.md`；
@@ -75,6 +89,7 @@ Austin —— 北美华人个人理财顾问，服务湾区华人工程师。
 
 ```
 index.html            首页
+resources.html        资源与指南
 design-system.md      设计规范（人读）
 design-system/        设计系统（机器读）
   styles.css          唯一入口，@import 全部 token
@@ -83,7 +98,8 @@ design-system/        设计系统（机器读）
   guidelines/         规范示例卡片
   ui_kits/landing/    落地页原始还原版
   assets/about.jpg    顾问照片
-  湾区理财顾问落地页.dc.html   Claude Design 原始模板（来源，勿直接编辑）
+  湾区理财顾问落地页.dc.html   首页原始模板（来源，勿直接编辑）
+  resources.dc.html   资源页原始模板（来源，勿直接编辑）
 ```
 
 `design-system/` 从 Claude Design 项目同步而来。改动应发生在 `index.html`，

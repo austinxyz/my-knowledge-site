@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body{margin:0;background:var(--page);font-family:var(--font-body)}
+  a{color:var(--link);text-decoration:none}
+  a:hover{filter:brightness(.85)}
+</style>
+</helmet>
+
+<div style="max-width:var(--page-max);margin:0 auto;background:var(--bg);box-shadow:0 4px 30px rgba(0,0,0,.08)">
+
+  <!-- header (matches home brand lockup) -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:24px var(--section-x);border-bottom:1px solid var(--line)">
+    <a href="ui_kits/landing/index.html" style="display:flex;align-items:center;gap:10px">
+      <div style="width:32px;height:32px;border-radius:var(--radius-sm);background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font:700 16px var(--font-display)">A</div>
+      <span style="font:600 16px var(--font-display);color:var(--ink)">Austin · 湾区理财规划</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:28px;font-size:var(--text-body);color:var(--body)">
+      <a href="ui_kits/landing/index.html" style="color:var(--body)">首页</a>
+      <a href="resources.dc.html" style="color:var(--ink);font-weight:500">资源</a>
+      <a href="ui_kits/landing/index.html#book" style="padding:9px 18px;background:var(--accent);color:var(--on-accent);border-radius:var(--radius);font-weight:500">预约咨询</a>
+    </div>
+  </div>
+
+  <!-- intro + filters -->
+  <div style="padding:var(--section-y) var(--section-x) 40px">
+    <div style="font-size:var(--text-eyebrow);letter-spacing:var(--track-eyebrow);color:var(--muted);font-weight:500;margin-bottom:12px">资源与指南</div>
+    <h1 style="margin:0 0 16px;font:600 var(--text-hero) var(--font-display);line-height:var(--lh-tight);color:var(--ink);text-wrap:pretty">写给湾区工程师的<br>理财与税务笔记</h1>
+    <p style="margin:0 0 32px;font-size:var(--text-lead);line-height:var(--lh-body);color:var(--body);max-width:520px;text-wrap:pretty">把常被问到的问题写成文章。用你听得懂的话，讲清 401K、RSU、税务和投资的关键决策。</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <sc-for list="{{ chips }}" as="chip" hint-placeholder-count="5">
+        <div style="{{ chip.style }}" onClick="{{ chip.onClick }}">{{ chip.name }}</div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- article grid -->
+  <div style="padding:0 var(--section-x) var(--section-y)">
+    <div style="font-size:var(--text-small);color:var(--muted);margin-bottom:20px">共 {{ count }} 篇</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-card)">
+      <sc-for list="{{ articles }}" as="a" hint-placeholder-count="6">
+        <a href="#" style="display:flex;flex-direction:column;padding:var(--pad-card);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);transition:box-shadow .15s ease,transform .15s ease" style-hover="box-shadow:var(--shadow-raise);transform:translateY(-2px)">
+          <span style="align-self:flex-start;font-size:var(--text-eyebrow);font-weight:500;color:var(--accent);background:var(--accent-tint);padding:6px 12px;border-radius:var(--radius-pill);margin-bottom:16px">{{ a.topic }}</span>
+          <h3 style="margin:0 0 10px;font:600 var(--text-h3) var(--font-display);line-height:var(--lh-snug);color:var(--ink)">{{ a.title }}</h3>
+          <p style="margin:0 0 20px;font-size:var(--text-body);line-height:var(--lh-body);color:var(--body);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">{{ a.summary }}</p>
+          <div style="margin-top:auto;display:flex;align-items:center;gap:10px;font-size:var(--text-small);color:var(--muted)">
+            <span>{{ a.date }}</span><span>·</span><span>{{ a.read }}</span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- footer (identical to home) -->
+  <div style="padding:24px var(--section-x);background:var(--accent-deep);color:var(--on-accent-faint);font-size:var(--text-eyebrow);line-height:1.7;text-align:center">
+    © 2026 Austin 理财规划 · 服务湾区华人工程师<br>
+    本页面内容仅供教育参考，不构成个性化投资、税务或法律建议。具体方案请以正式咨询为准。
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { filter: "全部" };
+  renderVals() {
+    const topics = ["全部", "401K", "RSU", "税务规划", "投资基础"];
+    const all = [
+      { topic: "RSU", title: "RSU vest 后到底该不该马上卖？", summary: "很多工程师把 vest 的股票一直拿着，结果持仓越来越集中。聊聊什么时候卖、卖多少，以及背后的税务与风险考量。", date: "2026-06-18", read: "6 分钟" },
+      { topic: "401K", title: "Mega Backdoor Roth 全流程：把免税额度用满", summary: "after-tax 401K + in-plan conversion 是最容易被漏掉的免税空间。一步步讲清怎么开、怎么转、每年能多存多少。", date: "2026-05-30", read: "8 分钟" },
+      { topic: "投资基础", title: "湾区工程师退休，到底要存多少钱？", summary: "从现在的开销倒推退休所需，把 RSU、房子、现金放进同一张现金流图，算出你的数字，而不是凭感觉焦虑。", date: "2026-05-12", read: "7 分钟" },
+      { topic: "税务规划", title: "ISO 行权与 AMT：别让节税变补税", summary: "ISO 行权时机没算好，很可能触发 AMT 反而多交税。讲清 AMT 的触发逻辑和分批行权的思路。", date: "2026-04-28", read: "9 分钟" },
+      { topic: "401K", title: "401K 里的 after-tax 供款，很多人漏掉的一步", summary: "只做到公司 match 就停了？after-tax 供款是通往 Mega Backdoor Roth 的入口，先搞懂这块额度。", date: "2026-04-10", read: "5 分钟" },
+      { topic: "RSU", title: "分散还是集中？RSU 带来的持仓集中风险", summary: "你的工资、股票、甚至房贷可能都绑在同一家公司。聊聊如何在不踩税坑的前提下逐步分散。", date: "2026-03-22", read: "6 分钟" },
+      { topic: "税务规划", title: "报税季前的 5 个省税动作", summary: "很多节税窗口在年底前就关上了。列出报税季前值得检查的 5 件事，别等报税时才后悔。", date: "2026-03-05", read: "7 分钟" },
+      { topic: "投资基础", title: "指数基金入门：给工程师的第一堂投资课", summary: "不想选股、也没空盯盘？用低成本指数基金搭一个能长期持有的组合，把复利交给时间。", date: "2026-02-14", read: "5 分钟" }
+    ];
+    const filter = this.state.filter;
+    const articles = filter === "全部" ? all : all.filter(a => a.topic === filter);
+    const base = "padding:10px 18px;border-radius:var(--radius-pill);font-size:14px;font-weight:500;cursor:pointer;font-family:var(--font-body);transition:background .15s ease";
+    const chips = topics.map(t => ({
+      name: t,
+      onClick: () => this.setState({ filter: t }),
+      style: t === filter
+        ? base + ";background:var(--accent);color:var(--on-accent);border:1px solid transparent"
+        : base + ";background:var(--surface);color:var(--body);border:1px solid var(--accent-border)"
+    }));
+    return { chips, articles, count: articles.length };
+  }
+}
+</script>
+</body>
+</html>

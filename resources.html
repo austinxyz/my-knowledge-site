@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>资源与指南 · Austin 湾区理财规划</title>
+<meta name="description" content="写给湾区工程师的理财与税务笔记：401K、RSU、ISO 与 AMT、税务规划、投资基础。用你听得懂的话讲清关键决策。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Design system entry — imports fonts + all four token files. -->
+<link rel="stylesheet" href="design-system/styles.css">
+<style>
+  /* ---- page shell (mirrors index.html) ---- */
+  body{margin:0;background:var(--page);font-family:var(--font-body)}
+  a{color:var(--link);text-decoration:none}
+  a:hover{filter:brightness(.9)}
+  .page{max-width:var(--page-max);margin:0 auto;background:var(--bg);box-shadow:var(--shadow-raise)}
+  h1,h2,h3{color:var(--ink);font-family:var(--font-display);margin:0}
+
+  /* ---- header nav ---- */
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px var(--section-x);border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:10px}
+  .mark{width:32px;height:32px;border-radius:var(--radius-sm);background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font:700 var(--text-body-lg) var(--font-display)}
+  .brand span{font:600 var(--text-body-lg) var(--font-display);color:var(--ink)}
+  .navlinks{display:flex;align-items:center;gap:28px;font-size:var(--text-body);color:var(--body)}
+  .navlinks a{color:var(--body)}
+  .navlinks a[aria-current="page"]{color:var(--ink);font-weight:500}
+  .navcta{padding:9px 18px;background:var(--accent);color:var(--on-accent)!important;border-radius:var(--radius);font-weight:500}
+
+  /* ---- intro ---- */
+  .intro{padding:var(--section-y) var(--section-x) 40px}
+  .k{font-size:var(--text-eyebrow);letter-spacing:var(--track-eyebrow);color:var(--muted);font-weight:500;margin-bottom:12px}
+  h1{font-weight:600;font-size:var(--text-hero);line-height:var(--lh-tight);text-wrap:pretty;margin-bottom:16px}
+  .lead{font-size:var(--text-lead);line-height:var(--lh-body);color:var(--body);max-width:520px;text-wrap:pretty;margin:0 0 32px}
+
+  /* ---- topic filter ---- */
+  .filters{display:flex;flex-wrap:wrap;gap:12px}
+  .chip{padding:10px 18px;border-radius:var(--radius-pill);font-size:var(--text-body);font-weight:500;font-family:var(--font-body);cursor:pointer;background:var(--surface);color:var(--body);border:1px solid var(--accent-border);transition:background .15s ease,color .15s ease}
+  .chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:transparent}
+
+  /* ---- article grid ---- */
+  .list{padding:0 var(--section-x) var(--section-y)}
+  .count{font-size:var(--text-small);color:var(--muted);margin-bottom:20px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-card)}
+  .card{display:flex;flex-direction:column;padding:var(--pad-card);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);transition:box-shadow .15s ease,transform .15s ease}
+  .card:hover{box-shadow:var(--shadow-raise);transform:translateY(-2px);filter:none}
+  .card .topic{align-self:flex-start;font-size:var(--text-eyebrow);font-weight:500;color:var(--accent);background:var(--accent-tint);padding:6px 12px;border-radius:var(--radius-pill);margin-bottom:16px}
+  .card h3{font-weight:600;font-size:var(--text-h3);line-height:var(--lh-snug);margin-bottom:10px}
+  .card p{margin:0 0 20px;font-size:var(--text-body);line-height:var(--lh-body);color:var(--body);display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .meta{margin-top:auto;display:flex;align-items:center;gap:10px;font-size:var(--text-small);color:var(--muted)}
+  .card[hidden]{display:none}
+
+  footer{padding:24px var(--section-x);background:var(--accent-deep);color:var(--on-accent-faint);font-size:var(--text-eyebrow);line-height:var(--lh-body);text-align:center}
+
+  /* ---- responsive ----
+     Same approach as index.html: relax layout and step the type scale down by
+     overriding tokens scoped to .page — never globally. */
+  @media (max-width:1080px){
+    .page{box-shadow:none}
+  }
+  @media (max-width:860px){
+    .page{--section-y:56px;--section-x:32px;--text-hero:34px}
+    .grid{grid-template-columns:1fr}
+    .lead{max-width:none}
+    .nav{flex-wrap:wrap;gap:16px}
+  }
+  @media (max-width:640px){
+    .page{--section-y:44px;--section-x:20px;--text-hero:28px;--pad-card:24px 20px}
+    .navlinks{gap:18px;font-size:var(--text-small)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+    .card:hover{transform:none}
+  }
+</style>
+</head>
+<!-- Accent scheme: add data-theme="green|teal|slate|bronze" to .page below.
+     No attribute = 深蓝 (default). -->
+<body>
+<div class="page">
+
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <div class="mark" aria-hidden="true">A</div>
+      <span>Austin · 湾区理财规划</span>
+    </a>
+    <div class="navlinks">
+      <a href="index.html">首页</a>
+      <a href="resources.html" aria-current="page">资源</a>
+      <a class="navcta" href="index.html#book">预约咨询</a>
+    </div>
+  </nav>
+
+  <div class="intro">
+    <div class="k">资源与指南</div>
+    <h1>写给湾区工程师的<br>理财与税务笔记</h1>
+    <p class="lead">把常被问到的问题写成文章。用你听得懂的话，讲清 401K、RSU、税务和投资的关键决策。</p>
+    <div class="filters" role="group" aria-label="按主题筛选文章">
+      <button type="button" class="chip" data-topic="全部" aria-pressed="true">全部</button>
+      <button type="button" class="chip" data-topic="401K" aria-pressed="false">401K</button>
+      <button type="button" class="chip" data-topic="RSU" aria-pressed="false">RSU</button>
+      <button type="button" class="chip" data-topic="税务规划" aria-pressed="false">税务规划</button>
+      <button type="button" class="chip" data-topic="投资基础" aria-pressed="false">投资基础</button>
+    </div>
+  </div>
+
+  <div class="list">
+    <div class="count" aria-live="polite">共 <span id="count">8</span> 篇</div>
+    <div class="grid" id="grid">
+
+      <!-- 文章详情页尚未建立，href 暂为占位锚点 -->
+      <a class="card" href="#" data-topic="RSU">
+        <span class="topic">RSU</span>
+        <h3>RSU vest 后到底该不该马上卖？</h3>
+        <p>很多工程师把 vest 的股票一直拿着，结果持仓越来越集中。聊聊什么时候卖、卖多少，以及背后的税务与风险考量。</p>
+        <div class="meta"><span>2026-06-18</span><span>·</span><span>6 分钟</span></div>
+      </a>
+
+      <a class="card" href="#" data-topic="401K">
+        <span class="topic">401K</span>
+        <h3>Mega Backdoor Roth 全流程：把免税额度用满</h3>
+        <p>after-tax 401K + in-plan conversion 是最容易被漏掉的免税空间。一步步讲清怎么开、怎么转、每年能多存多少。</p>
+        <div class="meta"><span>2026-05-30</span><span>·</span><span>8 分钟</span></div>
+      </a>
+
+      <a class="card" href="#" data-topic="投资基础">
+        <span class="topic">投资基础</span>
+        <h3>湾区工程师退休，到底要存多少钱？</h3>
+        <p>从现在的开销倒推退休所需，把 RSU、房子、现金放进同一张现金流图，算出你的数字，而不是凭感觉焦虑。</p>
+        <div class="meta"><span>2026-05-12</span><span>·</span><span>7 分钟</span></div>
+      </a>
+
+      <a class="card" href="#" data-topic="税务规划">
+        <span class="topic">税务规划</span>
+        <h3>ISO 行权与 AMT：别让节税变补税</h3>
+        <p>ISO 行权时机没算好，很可能触发 AMT 反而多交税。讲清 AMT 的触发逻辑和分批行权的思路。</p>
+        <div class="meta"><span>2026-04-28</span><span>·</span><span>9 分钟</span></div>
+      </a>
+
+      <a class="card" href="#" data-topic="401K">
+        <span class="topic">401K</span>
+        <h3>401K 里的 after-tax 供款，很多人漏掉的一步</h3>
+        <p>只做到公司 match 就停了？after-tax 供款是通往 Mega Backdoor Roth 的入口，先搞懂这块额度。</p>
+        <div class="meta"><span>2026-04-10</span><span>·</span><span>5 分钟</span></div>
+      </a>
+
+      <a class="card" href="#" data-topic="RSU">
+        <span class="topic">RSU</span>
+        <h3>分散还是集中？RSU 带来的持仓集中风险</h3>
+        <p>你的工资、股票、甚至房贷可能都绑在同一家公司。聊聊如何在不踩税坑的前提下逐步分散。</p>
+        <div class="meta"><span>2026-03-22</span><span>·</span><span>6 分钟</span></div>
+      </a>
+
+      <a class="card" href="#" data-topic="税务规划">
+        <span class="topic">税务规划</span>
+        <h3>报税季前的 5 个省税动作</h3>
+        <p>很多节税窗口在年底前就关上了。列出报税季前值得检查的 5 件事，别等报税时才后悔。</p>
+        <div class="meta"><span>2026-03-05</span><span>·</span><span>7 分钟</span></div>
+      </a>
+
+      <a class="card" href="#" data-topic="投资基础">
+        <span class="topic">投资基础</span>
+        <h3>指数基金入门：给工程师的第一堂投资课</h3>
+        <p>不想选股、也没空盯盘？用低成本指数基金搭一个能长期持有的组合，把复利交给时间。</p>
+        <div class="meta"><span>2026-02-14</span><span>·</span><span>5 分钟</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Austin 理财规划 · 服务湾区华人工程师<br>
+    本页面内容仅供教育参考，不构成个性化投资、税务或法律建议。具体方案请以正式咨询为准。
+  </footer>
+
+</div>
+
+<script>
+  // 主题筛选。文章全部静态输出在 HTML 里，JS 只负责显示/隐藏，
+  // 因此禁用 JS 时所有文章仍然可见可读。
+  (function () {
+    var chips = document.querySelectorAll('.chip');
+    var cards = document.querySelectorAll('.card');
+    var count = document.getElementById('count');
+
+    function apply(topic) {
+      var shown = 0;
+      cards.forEach(function (card) {
+        var match = topic === '全部' || card.dataset.topic === topic;
+        card.hidden = !match;
+        if (match) shown++;
+      });
+      chips.forEach(function (chip) {
+        chip.setAttribute('aria-pressed', String(chip.dataset.topic === topic));
+      });
+      count.textContent = shown;
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        apply(chip.dataset.topic);
+      });
+    });
+  })();
+</script>
+</body>
+</html>
