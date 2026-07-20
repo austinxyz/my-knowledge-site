@@ -1,0 +1,37 @@
+/* Typography — Noto Serif SC (display, 温暖专业) + Noto Sans SC (body).
+   Google-hosted webfonts. Swap to self-hosted @font-face for production. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap');
+
+:root {
+  /* families */
+  --font-display: 'Noto Serif SC', Georgia, serif;
+  --font-body: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, Menlo, Consolas, monospace;
+
+  /* type scale (px) */
+  --text-hero: 44px;   /* h1 hero */
+  --text-price: 40px;  /* pricing figure */
+  --text-h2: 30px;     /* section heading */
+  --text-h3: 19px;     /* card heading */
+  --text-title: 18px;  /* pricing tier title */
+  --text-lead: 17px;   /* hero subhead */
+  --text-body-lg: 16px;
+  --text-body: 15px;
+  --text-small: 13px;
+  --text-eyebrow: 12px;
+
+  /* weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* line-height */
+  --lh-tight: 1.28;
+  --lh-snug: 1.4;
+  --lh-body: 1.75;
+  --lh-loose: 1.8;
+
+  /* tracking */
+  --track-eyebrow: 0.16em;
+}

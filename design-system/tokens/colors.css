@@ -1,0 +1,49 @@
+/* Color — warm-neutral canvas + one accent hue in three depths.
+   Default accent is 深蓝 (deep blue). Switch the whole page by setting
+   data-theme="green|teal|slate|bronze" on a container (see scopes below). */
+:root {
+  /* neutrals (toned, never pure #000) */
+  --page: #eceae4;      /* outermost backdrop / canvas */
+  --bg: #fbfbf9;        /* page surface (warm off-white) */
+  --surface: #ffffff;   /* cards */
+  --ink: #1c2420;       /* headings */
+  --body: #4b5650;      /* body copy */
+  --muted: #78827b;     /* eyebrows, captions, meta */
+  --line: #e8ebe8;      /* hairline borders / dividers */
+
+  /* accent — 深蓝 (default) */
+  --accent: #274a6d;         /* buttons, links, filled tier, hero panel */
+  --accent-strong: #1f3d59;  /* booking band */
+  --accent-deep: #162c40;    /* footer */
+  --accent-tint: #eef2f7;    /* pills, icon chips */
+  --accent-band: #f3f6f9;    /* about section band */
+  --accent-border: #e6ebef;  /* borders on tinted bands */
+  --on-accent: #ffffff;      /* text on accent */
+  --on-accent-muted: #cfdce8;/* secondary text on accent */
+  --on-accent-faint: #9db1c6;/* meta text on accent */
+  --check: #9ec8ee;          /* check marks on filled tier */
+
+  --link: var(--accent);
+}
+
+/* ---- alternative accent schemes (opt-in via data-theme) ---- */
+[data-theme="green"] {
+  --accent: #2f5d4e; --accent-strong: #274b3f; --accent-deep: #16362b;
+  --accent-tint: #eaf1ec; --accent-band: #f2f7f4; --accent-border: #e4ebe6;
+  --on-accent-muted: #cfe0d8; --on-accent-faint: #9db9ac; --check: #8fd3b6;
+}
+[data-theme="teal"] {
+  --accent: #1f5a5f; --accent-strong: #184a4e; --accent-deep: #0f3437;
+  --accent-tint: #e7f1f1; --accent-band: #eff7f6; --accent-border: #e0eae9;
+  --on-accent-muted: #c6e0df; --on-accent-faint: #8fb4b3; --check: #86d0cf;
+}
+[data-theme="slate"] {
+  --accent: #3a4a63; --accent-strong: #2e3b50; --accent-deep: #202938;
+  --accent-tint: #eef0f5; --accent-band: #f4f5f9; --accent-border: #e6e8ef;
+  --on-accent-muted: #d0d6e2; --on-accent-faint: #9aa3b6; --check: #a9b7d0;
+}
+[data-theme="bronze"] {
+  --accent: #6b5334; --accent-strong: #57432a; --accent-deep: #3a2d1c;
+  --accent-tint: #f3efe7; --accent-band: #f7f4ee; --accent-border: #ebe6da;
+  --on-accent-muted: #e4dccb; --on-accent-faint: #b5a98f; --check: #d8c297;
+}

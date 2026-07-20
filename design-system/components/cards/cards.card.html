@@ -1,0 +1,47 @@
+<!-- @dsCard group="Components" viewport="820x420" name="Cards — Feature · Pricing" subtitle="Numbered feature card + two pricing tiers" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--bg);padding:28px}
+  .row{display:flex;gap:24px;align-items:flex-start}
+  .feature{width:280px;padding:32px 28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg)}
+  .chip{width:44px;height:44px;border-radius:var(--radius-md);background:var(--accent-tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:18px;margin-bottom:20px}
+  .feature h3{margin:0 0 12px;font-family:var(--font-display);font-weight:600;font-size:var(--text-h3);line-height:var(--lh-snug);color:var(--ink)}
+  .feature p{margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--body)}
+  .price{position:relative;width:280px;padding:40px 32px;border-radius:var(--radius-xl);box-sizing:border-box}
+  .price.plain{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+  .price.feat{background:var(--accent);color:var(--on-accent);box-shadow:var(--shadow-pop)}
+  .badge{position:absolute;top:20px;right:24px;font-size:var(--text-eyebrow);letter-spacing:.12em;background:rgba(255,255,255,.16);padding:5px 11px;border-radius:var(--radius-pill)}
+  .nm{font-family:var(--font-display);font-weight:600;font-size:var(--text-title)}
+  .fig{margin:16px 0 6px;font-family:var(--font-display);font-weight:700;font-size:var(--text-price)}
+  .note{font-size:var(--text-small);margin-bottom:24px}
+  .plain .note{color:var(--muted)} .feat .note{color:var(--on-accent-muted)}
+  .feat{--_c:var(--check)} .plain{--_c:var(--accent)}
+  ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:var(--text-body);line-height:1.5}
+  .plain ul{color:var(--body)} .feat ul{color:var(--on-accent-muted)}
+  li{display:flex;gap:10px} li::before{content:"✓";color:var(--_c);font-weight:700}
+  .cta{display:block;text-align:center;margin-top:28px;padding:16px;border-radius:var(--radius);font-weight:500;font-size:var(--text-body);box-sizing:border-box}
+  .plain .cta{border:1px solid var(--accent);color:var(--accent)}
+  .feat .cta{background:#fff;color:var(--accent);font-weight:600}
+</style></head>
+<body><div class="row">
+  <div class="feature">
+    <div class="chip">01</div>
+    <h3>401K &amp; Backdoor Roth 没做满</h3>
+    <p>公司 match 拿了，但 after-tax 401K、Mega Backdoor Roth 这些免税额度年年浪费。</p>
+  </div>
+  <div class="price plain">
+    <div class="nm">单次深度咨询</div>
+    <div class="fig">$299</div>
+    <div class="note">一次 90 分钟 · 一对一</div>
+    <ul><li>梳理最紧迫的问题</li><li>当场给出可执行清单</li><li>会后 7 天文字答疑</li></ul>
+    <span class="cta">预约单次咨询</span>
+  </div>
+  <div class="price feat">
+    <span class="badge">最受欢迎</span>
+    <div class="nm">年度全程规划</div>
+    <div class="fig">$899<span style="font-size:16px;font-weight:500;opacity:.8">/年</span></div>
+    <div class="note">全年陪伴 · 随时可问</div>
+    <ul><li>季度复盘</li><li>年度现金流与退休测算</li><li>微信随时答疑</li></ul>
+    <span class="cta">预约年度规划</span>
+  </div>
+</div></body></html>

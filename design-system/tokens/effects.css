@@ -1,0 +1,14 @@
+/* Radii & shadows. */
+:root {
+  --radius-sm: 7px;   /* logo tile, small chips */
+  --radius: 9px;      /* buttons */
+  --radius-md: 11px;  /* icon chips */
+  --radius-lg: 14px;  /* content cards, photos */
+  --radius-xl: 16px;  /* pricing cards */
+  --radius-pill: 99px;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, .06);
+  --shadow-raise: 0 4px 22px rgba(0, 0, 0, .07);
+  --shadow-photo: 0 16px 36px rgba(28, 44, 62, .2);
+  --shadow-pop: 0 16px 34px rgba(0, 0, 0, .22);
+}
