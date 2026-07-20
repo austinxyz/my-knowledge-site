@@ -13,19 +13,26 @@
   /* ---- page shell ---- */
   body{margin:0;background:var(--page);font-family:var(--font-body)}
   a{color:var(--link);text-decoration:none}
-  a:hover{filter:brightness(.85)}
+  a:hover{filter:brightness(.9)}
   img{max-width:100%}
-  .page{max-width:var(--page-max);margin:0 auto;background:var(--bg);box-shadow:0 4px 30px rgba(0,0,0,.08)}
+  .page{max-width:var(--page-max);margin:0 auto;background:var(--bg);box-shadow:var(--shadow-raise)}
   h1,h2,h3{color:var(--ink);font-family:var(--font-display);margin:0}
   section{padding:var(--section-y) var(--section-x)}
+
+  /* ---- header nav (shared shape with resources.html) ---- */
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px var(--section-x);border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:10px}
+  .mark{width:32px;height:32px;border-radius:var(--radius-sm);background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font:700 var(--text-body-lg) var(--font-display)}
+  .brand span{font:600 var(--text-body-lg) var(--font-display);color:var(--ink)}
+  .navlinks{display:flex;align-items:center;gap:28px;font-size:var(--text-body);color:var(--body)}
+  .navlinks a{color:var(--body)}
+  .navlinks a[aria-current="page"]{color:var(--ink);font-weight:500}
+  .navcta{padding:9px 18px;background:var(--accent);color:var(--on-accent)!important;border-radius:var(--radius);font-weight:500}
 
   /* ---- hero ---- */
   .hero{display:flex;min-height:560px}
   .hero-l{flex:1;padding:var(--section-y) var(--section-x);display:flex;flex-direction:column;justify-content:center}
-  .brand{display:flex;align-items:center;gap:10px;margin-bottom:32px}
-  .mark{width:32px;height:32px;border-radius:var(--radius-sm);background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font:700 16px var(--font-display)}
-  .brand span{font:600 16px var(--font-display);color:var(--ink)}
-  .eyebrow{display:inline-block;width:fit-content;font-size:var(--text-eyebrow);letter-spacing:.14em;color:var(--accent);font-weight:500;margin-bottom:20px;padding:6px 12px;background:var(--accent-tint);border-radius:var(--radius-pill)}
+  .eyebrow{display:inline-block;width:fit-content;font-size:var(--text-eyebrow);letter-spacing:var(--track-eyebrow);color:var(--accent);font-weight:500;margin-bottom:20px;padding:6px 12px;background:var(--accent-tint);border-radius:var(--radius-pill)}
   h1{font-weight:600;font-size:var(--text-hero);line-height:var(--lh-tight);text-wrap:pretty;margin-bottom:22px}
   .lead{font-size:var(--text-lead);line-height:var(--lh-body);color:var(--body);max-width:440px;text-wrap:pretty;margin:0 0 32px}
   .lead b{color:var(--accent);font-weight:500}
@@ -39,7 +46,7 @@
   .hero-r img{display:block;width:100%;height:100%;object-fit:cover;opacity:.97}
   /* the only gradient in the system: legibility scrim on the hero photo */
   .cap{position:absolute;left:0;right:0;bottom:0;padding:24px 32px;background:linear-gradient(0deg,rgba(20,36,52,.85),transparent);color:var(--on-accent)}
-  .cap .nm{font:600 19px var(--font-display)}
+  .cap .nm{font:600 var(--text-h3) var(--font-display)}
   .cap .rl{font-size:var(--text-small);opacity:.85;margin-top:3px}
 
   /* ---- section headings ---- */
@@ -50,7 +57,7 @@
   /* ---- pain-point cards ---- */
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap-card)}
   .fcard{padding:var(--pad-card);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg)}
-  .chip{width:44px;height:44px;border-radius:var(--radius-md);background:var(--accent-tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font:700 18px var(--font-display);margin-bottom:20px}
+  .chip{width:44px;height:44px;border-radius:var(--radius-md);background:var(--accent-tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font:700 var(--text-title) var(--font-display);margin-bottom:20px}
   .fcard h3{font-weight:600;font-size:var(--text-h3);line-height:var(--lh-snug);margin-bottom:12px}
   .fcard p{margin:0;font-size:var(--text-body);line-height:var(--lh-body);color:var(--body)}
 
@@ -71,13 +78,13 @@
   .tier .nm{font:600 var(--text-title) var(--font-display);color:inherit}
   .tier.plain .nm{color:var(--ink)}
   .fig{margin:16px 0 6px;font:700 var(--text-price) var(--font-display)}
-  .fig .per{font-size:16px;font-weight:500;opacity:.8}
+  .fig .per{font-size:var(--text-body-lg);font-weight:500;opacity:.8}
   .tier.plain .fig{color:var(--ink)}
-  .badge{position:absolute;top:20px;right:24px;font-size:var(--text-eyebrow);letter-spacing:.12em;background:rgba(255,255,255,.16);padding:5px 11px;border-radius:var(--radius-pill)}
+  .badge{position:absolute;top:20px;right:24px;font-size:var(--text-eyebrow);letter-spacing:var(--track-eyebrow);background:rgba(255,255,255,.16);padding:5px 11px;border-radius:var(--radius-pill)}
   .sub{font-size:var(--text-small);margin-bottom:24px}
   .plain .sub{color:var(--muted)}
   .feat .sub{color:var(--on-accent-muted)}
-  .feats{display:flex;flex-direction:column;gap:12px;font-size:var(--text-body);line-height:1.5}
+  .feats{display:flex;flex-direction:column;gap:12px;font-size:var(--text-body);line-height:var(--lh-snug)}
   .plain .feats{color:var(--body)}
   .feat .feats{color:var(--on-accent-muted)}
   .feats div{display:flex;gap:10px}
@@ -90,7 +97,7 @@
   /* ---- booking band ---- */
   .book{background:var(--accent-strong);color:var(--on-accent)}
   .book .in{display:flex;gap:52px;align-items:center;justify-content:space-between}
-  .book h2{color:var(--on-accent);font-weight:600;font-size:var(--text-h2);line-height:1.35;margin-bottom:16px}
+  .book h2{color:var(--on-accent);font-weight:600;font-size:var(--text-h2);line-height:var(--lh-snug);margin-bottom:16px}
   .book p{font-size:var(--text-body-lg);line-height:var(--lh-body);color:var(--on-accent-muted);max-width:440px;margin:0 0 28px}
   .cal{display:inline-block;padding:16px 32px;background:var(--surface);color:var(--accent-strong);border-radius:var(--radius-md);font-weight:600;font-size:var(--text-body-lg)}
   .calnote{margin-top:16px;font-size:var(--text-small);color:var(--on-accent-faint);font-family:var(--font-mono)}
@@ -98,7 +105,7 @@
   .qr{width:172px;height:172px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;color:var(--accent);font:500 var(--text-small) var(--font-mono);text-align:center;border:1px solid rgba(255,255,255,.2);background-color:var(--accent-tint);background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.08) 0 6px,transparent 6px 12px)}
   .qrnote{margin-top:12px;font-size:var(--text-small);color:var(--on-accent-muted)}
 
-  footer{padding:24px var(--section-x);background:var(--accent-deep);color:var(--on-accent-faint);font-size:var(--text-eyebrow);line-height:1.7;text-align:center}
+  footer{padding:24px var(--section-x);background:var(--accent-deep);color:var(--on-accent-faint);font-size:var(--text-eyebrow);line-height:var(--lh-body);text-align:center}
 
   /* ---- responsive ----
      The source .dc.html is a fixed 1080px composer artifact and the system has no
@@ -110,6 +117,7 @@
   }
   @media (max-width:860px){
     .page{--section-y:56px;--section-x:32px;--text-hero:34px;--text-h2:26px}
+    .nav{flex-wrap:wrap;gap:16px}
     .hero{flex-direction:column;min-height:0}
     .hero-r{width:100%;height:360px;order:-1}
     .lead{max-width:none}
@@ -120,6 +128,7 @@
   }
   @media (max-width:640px){
     .page{--section-y:44px;--section-x:20px;--text-hero:28px;--text-h2:23px;--pad-card:24px 20px;--pad-card-lg:28px 22px}
+    .navlinks{gap:18px;font-size:var(--text-small)}
     .hero-r{height:280px}
     .prices{grid-template-columns:1fr}
     .btns .btn{flex:1 1 100%;justify-content:center}
@@ -134,9 +143,20 @@
 <body>
 <div class="page">
 
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <div class="mark" aria-hidden="true">A</div>
+      <span>Austin · 湾区理财规划</span>
+    </a>
+    <div class="navlinks">
+      <a href="index.html" aria-current="page">首页</a>
+      <a href="resources.html">资源</a>
+      <a class="navcta" href="#book">预约咨询</a>
+    </div>
+  </nav>
+
   <div class="hero">
     <div class="hero-l">
-      <div class="brand"><div class="mark" aria-hidden="true">A</div><span>Austin · 湾区理财规划</span></div>
       <div class="eyebrow">RSU 已开始 vest？该做规划了</div>
       <h1>把复杂的股权与税务，<br>交给懂工程师的人</h1>
       <p class="lead">我是 Austin，专注服务湾区华人工程师。帮你理清 <b>401K / Backdoor Roth</b>、退休规划和省税策略——用你听得懂的话，只给建议，不做推销。</p>
